@@ -25,15 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Lint Monorepo
         run: yarn lint:monorepo
@@ -57,15 +57,15 @@ jobs:
     runs-on: CLI
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: compile
         run: yarn compile
@@ -74,15 +74,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: lint:eslint
         run: yarn lint:eslint
@@ -94,15 +94,15 @@ jobs:
         shard: [1, 2, 3, 4]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Run tests
         run: yarn test --maxWorkers 15 --shard=${{ matrix.shard }}/${{ strategy.job-total }} --ci
@@ -114,15 +114,15 @@ jobs:
     runs-on: CLI
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Run ETE tests
         env:
@@ -139,15 +139,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: 18
+          node-version: 22
           cache: "yarn"
 
       - name: Install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Check API definition is valid
         env:
